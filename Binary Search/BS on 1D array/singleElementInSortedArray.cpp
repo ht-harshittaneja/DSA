@@ -5,47 +5,15 @@ Return the single element that appears only once.
 Your solution must run in O(log n) time and O(1) space. 
 */
 
-//Brute force Approach 
-class Solution {
-public:
-    int singleNonDuplicate(vector<int>& arr) {
-        int n = arr.size();
+/* 
+optimal Approach:
+Before the single element, pairs start at even indices.
+After the single element, pairs start at odd indices.
+Use binary search to find where this pattern breaks.
+Time Complexity: O(log n)
+Space Complexity: O(1)
+*/
 
-        if (n == 1) return arr[0];
-
-        for (int i = 0; i < n; i++) {
-            if (i == 0) {
-                if (arr[i] != arr[i + 1])
-                    return arr[i];
-            }
-            else if (i == n - 1) {
-                if (arr[i] != arr[i - 1])
-                    return arr[i];
-            }
-            else {
-                if (arr[i] != arr[i - 1] && arr[i] != arr[i + 1])
-                    return arr[i];
-            }
-        }
-        return -1;
-    }
-}; 
-
-//Brute force Approach 2 using Xor
-class Solution {
-public:
-    int singleNonDuplicate(vector<int>& arr) {
-        int n = arr.size();
-
-        int ans = 0;
-        for (int i = 0; i < n; i++) {
-            ans = ans ^ arr[i];
-        }
-        return ans;
-    }
-};
-
-// optimal approach
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
