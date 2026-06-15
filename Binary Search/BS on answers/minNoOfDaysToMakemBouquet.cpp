@@ -7,6 +7,15 @@ The garden consists of n flowers, the ith flower will bloom in the bloomDay[i] a
 Return the minimum number of days you need to wait to be able to make m bouquets from the garden. If it is impossible to make m bouquets return -1.
 */
 
+/* 
+Optimal Approah : O(n*log(max-min+1))
+Choose a day.
+Check if at least m bouquets can be formed by that day.
+If yes, try earlier days.
+If no, try later days.
+Return the smallest valid day.
+ */
+
 class Solution {
 public:
     int minDays(vector<int>& bloomDay, int m, int k) {
