@@ -8,14 +8,14 @@ Return the least weight capacity of the ship that will result in all the package
  */
 
 /* 
-Optimal Approach:
+Optimal Approach: O(n*log(sum-max+1))     O(n*log(sum))
 Minimum capacity = largest package.
 Maximum capacity = sum of all packages.
 Pick a capacity.
 Compute how many days are needed.
 If days needed ≤ target days → capacity works, try smaller.
 Otherwise → capacity too small, try larger.
- */
+*/
 
 class Solution {
 public:
