@@ -7,7 +7,7 @@ Integers in each column are sorted in ascending from top to bottom.
 */
 
 /*
-Optimal Approach : O()
+Optimal Approach : O(m+n)
 top-right works
 At matrix[row][col]:
     Everything to the left in that row is smaller.
